@@ -17,8 +17,7 @@
                 <menuItem title="screenShooter" id="56">
                     <menu key="submenu" title="screenShooter" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About screenShooter" id="58">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="About screenShooter" keyEquivalent="s" id="58">
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
                                 </connections>
@@ -103,7 +102,7 @@
         </menu>
         <window title="screenShooter" allowsToolTipsWhenApplicationIsInactive="NO" restorable="NO" hasShadow="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" fullSizeContentView="YES"/>
-            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" transient="YES" fullScreenPrimary="YES"/>
             <rect key="contentRect" x="0.0" y="0.0" width="800" height="600"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="372">

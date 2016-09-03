@@ -9,15 +9,23 @@
 import SpriteKit
 var direction = ""
 let sprite = SKSpriteNode(imageNamed:"Ship")
+var height = 0
+var width = 0
 
+var score = 0
 
-class GameScene: SKScene {
+struct PhysicsCategory {
+    static let None      : UInt32 = 0
+    static let All       : UInt32 = UInt32.max
+    static let Monster   : UInt32 = 0b1       // 1
+    static let Projectile: UInt32 = 0b10      // 2
+}
+
+class GameScene: SKScene , SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-//        let myLabel = SKLabelNode(fontNamed:"Helvetica")
-////        myLabel.text = "Hello"
-////        myLabel.fontSize = 45
-////        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        
+        physicsWorld.gravity = CGVectorMake(0, 0)
+        physicsWorld.contactDelegate = self
 
         self.view?.allowsTransparency = true
         self.backgroundColor = NSColor.clearColor()
@@ -31,8 +39,13 @@ class GameScene: SKScene {
 
         self.view?.window?.titleVisibility = NSWindowTitleVisibility.Hidden
         self.view?.window?.titlebarAppearsTransparent = true
+        
+        height =  Int(self.view!.frame.height) - 50
+        width =  Int(self.view!.frame.width) - 50
+        
     
         spawnAtRandomPosition()
+
         
     }
 
@@ -80,50 +93,106 @@ class GameScene: SKScene {
         
     }
     
+    func randRange (lower: Int , upper: Int) -> Int {
+        return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
+    }
+    
+    
+    
     func spawnAtRandomPosition() {
-        let height = UInt32(self.view!.frame.height) - 20
-        let width = UInt32(self.view!.frame.width) - 20
         
-        let randomPosition = CGPointMake(CGFloat(arc4random_uniform(width) + 20), CGFloat(arc4random_uniform(height - 20) + 20))
-        
+        let randomPosition = CGPointMake(CGFloat(randRange(50, upper: width)), CGFloat(randRange(50, upper: height)))
         let enemy = SKSpriteNode(imageNamed: "Enemy")
-        enemy.size = CGSize(width: 20, height: 20)
-        
+        enemy.size = CGSize(width: 25, height: 25)
         self.addChild(enemy)
         enemy.position = randomPosition
+        
+        enemy.physicsBody = SKPhysicsBody(rectangleOfSize: enemy.size) // 1
+        enemy.physicsBody?.dynamic = true // 2
+        enemy.physicsBody?.categoryBitMask = PhysicsCategory.Monster // 3
+        enemy.physicsBody?.contactTestBitMask = PhysicsCategory.Projectile // 4
+        enemy.physicsBody?.collisionBitMask = PhysicsCategory.None // 5
+        print("Spawn")
+        print(height)
+        print(width)
+        print(randomPosition)
+    }
+    
+    func projectileDidCollideWithMonster(projectile:SKSpriteNode, bad:SKSpriteNode) {
+        print("Hit")
+        projectile.removeFromParent()
+        bad.removeFromParent()
+        spawnAtRandomPosition()
+        score += 1
+    }
+    func didBeginContact(contact: SKPhysicsContact) {
+        
+        // 1
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        // 2
+        if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Projectile != 0)) {
+            projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, bad: secondBody.node as! SKSpriteNode)
+        }
+        
     }
     
     func fireMissile(direciton:String) {
         let bullet = SKSpriteNode(imageNamed:"Laser")
+        
         bullet.color = NSColor.greenColor()
-        bullet.size = CGSize(width: 10,height: 10)
+        bullet.size = CGSize(width: 15,height: 15)
         bullet.position = CGPointMake(sprite.position.x, sprite.position.y)
         self.addChild(bullet)
         var vector = CGVectorMake(0, 0)
         
+        bullet.physicsBody = SKPhysicsBody(circleOfRadius: bullet.size.width/2)
+        bullet.physicsBody?.dynamic = true
+        bullet.physicsBody?.categoryBitMask = PhysicsCategory.Projectile
+        bullet.physicsBody?.contactTestBitMask = PhysicsCategory.Monster
+        bullet.physicsBody?.collisionBitMask = PhysicsCategory.None
+        bullet.physicsBody?.usesPreciseCollisionDetection = true
+        bullet.physicsBody?.affectedByGravity = false
+        
         // Determine vector to targetSprite
         if direction == "left" {
             vector = CGVectorMake(-750, 0)
+            bullet.position = CGPointMake(sprite.position.x - 50, sprite.position.y)
+            
         }
         else if direction == "right" {
             vector = CGVectorMake(750, 0)
+              bullet.position = CGPointMake(sprite.position.x + 50, sprite.position.y)
         }
         else if direction == "up" {
             vector = CGVectorMake(0, 750)
+              bullet.position = CGPointMake(sprite.position.x, sprite.position.y + 50)
         }
         else if direction == "down" {
             vector = CGVectorMake(0, -750)
+              bullet.position = CGPointMake(sprite.position.x , sprite.position.y - 50)
         }
         
         
         // Create the action to move the bullet. Don't forget to remove the bullet!
-        let bulletAction = SKAction.sequence([SKAction.repeatAction(SKAction.moveBy(vector, duration: 1), count: 10) ,  SKAction.waitForDuration(30.0/60.0), SKAction.removeFromParent()])
+        let bulletAction =
+            SKAction.sequence([SKAction.repeatAction(SKAction.moveBy(vector, duration: 1), count: 10) ,  SKAction.waitForDuration(30.0/60.0), SKAction.removeFromParent()])
         bullet.runAction(bulletAction)
     }
     
     var fire = 0
     var x: CGFloat = 0
     var y: CGFloat = 0
+    
     
     override func keyDown(theEvent: NSEvent) // A key is pressed
     {
@@ -132,9 +201,8 @@ class GameScene: SKScene {
             direction = "left" //get the pressed key
             let rotate = SKAction.rotateToAngle(CGFloat(M_PI/2), duration: 0)
             sprite.runAction(rotate)
-
-            
         }
+            
         else if theEvent.keyCode == 124
         {
             direction = "right"
@@ -172,22 +240,23 @@ class GameScene: SKScene {
     
     override func update(currentTime: CFTimeInterval)
     {
+        
         if manIsMoving
         {
             updateManPosition(direction)
         }
         
         if right == true {
-            sprite.position.x += 5
+            sprite.position.x += 4
         }
         else if left == true {
-            sprite.position.x -= 5
+            sprite.position.x -= 4
         }
         else if up == true {
-            sprite.position.y += 5
+            sprite.position.y += 4
         }
         else if down == true {
-            sprite.position.y -= 5
+            sprite.position.y -= 4
         }
         if sprite.position.x < -60 {
             sprite.position.x = self.size.width

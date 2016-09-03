@@ -57,9 +57,9 @@
 				F948751A1D7791B800C0716B /* AppDelegate.swift */,
 				F948751C1D7791B800C0716B /* GameScene.swift */,
 				F948751E1D7791B800C0716B /* GameScene.sks */,
-				F94875201D7791B800C0716B /* Assets.xcassets */,
-				F94875221D7791B800C0716B /* MainMenu.xib */,
 				F94875251D7791B800C0716B /* Info.plist */,
+				F94875221D7791B800C0716B /* MainMenu.xib */,
+				F94875201D7791B800C0716B /* Assets.xcassets */,
 			);
 			path = screenShooter;
 			sourceTree = "<group>";
@@ -279,6 +279,7 @@
 				F948752A1D7791B800C0716B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
