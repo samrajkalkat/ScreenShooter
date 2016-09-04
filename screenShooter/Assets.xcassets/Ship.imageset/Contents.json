@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ship[1].png",
+      "filename" : "spShip.png",
       "scale" : "1x"
     },
     {

@@ -11,8 +11,10 @@ var direction = ""
 let sprite = SKSpriteNode(imageNamed:"Ship")
 var height = 0
 var width = 0
+var speed: CGFloat = 4
 
 var score = 0
+let myLabel = SKLabelNode(fontNamed:"Helvetica")
 
 struct PhysicsCategory {
     static let None      : UInt32 = 0
@@ -24,12 +26,18 @@ struct PhysicsCategory {
 class GameScene: SKScene , SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         
+       
+        myLabel.fontSize = 20
+        myLabel.fontColor = NSColor.redColor()
+        myLabel.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 100)
+        self.addChild(myLabel)
+        
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
 
         self.view?.allowsTransparency = true
         self.backgroundColor = NSColor.clearColor()
-        sprite.size = CGSize(width: 40, height: 60)
+        sprite.size = CGSize(width: 60, height: 60)
         self.addChild(sprite)
         sprite.position.x = self.size.width/2
         sprite.position.y = self.size.height/2
@@ -101,9 +109,9 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     
     func spawnAtRandomPosition() {
         
-        let randomPosition = CGPointMake(CGFloat(randRange(50, upper: width)), CGFloat(randRange(50, upper: height)))
+        let randomPosition = CGPointMake(CGFloat(randRange(100, upper: width - 100)), CGFloat(randRange(200, upper: height - 100)))
         let enemy = SKSpriteNode(imageNamed: "Enemy")
-        enemy.size = CGSize(width: 25, height: 25)
+        enemy.size = CGSize(width: 50, height: 50)
         self.addChild(enemy)
         enemy.position = randomPosition
         
@@ -113,8 +121,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         enemy.physicsBody?.contactTestBitMask = PhysicsCategory.Projectile // 4
         enemy.physicsBody?.collisionBitMask = PhysicsCategory.None // 5
         print("Spawn")
-        print(height)
-        print(width)
         print(randomPosition)
     }
     
@@ -124,6 +130,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         bad.removeFromParent()
         spawnAtRandomPosition()
         score += 1
+         myLabel.text = "Score: \(score)"
     }
     func didBeginContact(contact: SKPhysicsContact) {
         
@@ -145,12 +152,17 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         }
         
     }
+    func updateScore(score: SKLabelNode) {
+        score.removeFromParent()
+        self.addChild(myLabel)
+        
+    }
     
     func fireMissile(direciton:String) {
         let bullet = SKSpriteNode(imageNamed:"Laser")
         
         bullet.color = NSColor.greenColor()
-        bullet.size = CGSize(width: 15,height: 15)
+        bullet.size = CGSize(width: 30,height: 10)
         bullet.position = CGPointMake(sprite.position.x, sprite.position.y)
         self.addChild(bullet)
         var vector = CGVectorMake(0, 0)
@@ -165,20 +177,22 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         
         // Determine vector to targetSprite
         if direction == "left" {
-            vector = CGVectorMake(-750, 0)
+            vector = CGVectorMake(-650, 0)
             bullet.position = CGPointMake(sprite.position.x - 50, sprite.position.y)
             
         }
         else if direction == "right" {
-            vector = CGVectorMake(750, 0)
+            vector = CGVectorMake(650, 0)
               bullet.position = CGPointMake(sprite.position.x + 50, sprite.position.y)
         }
         else if direction == "up" {
-            vector = CGVectorMake(0, 750)
+            bullet.size = CGSize(width: 10,height: 30)
+            vector = CGVectorMake(0, 650)
               bullet.position = CGPointMake(sprite.position.x, sprite.position.y + 50)
         }
         else if direction == "down" {
-            vector = CGVectorMake(0, -750)
+             bullet.size = CGSize(width: 10,height: 30)
+            vector = CGVectorMake(0, -650)
               bullet.position = CGPointMake(sprite.position.x , sprite.position.y - 50)
         }
         
@@ -241,6 +255,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval)
     {
         
+        updateScore(myLabel)
+        
         if manIsMoving
         {
             updateManPosition(direction)
@@ -248,15 +264,23 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         
         if right == true {
             sprite.position.x += 4
+            let rotate = SKAction.rotateToAngle(CGFloat(3*M_PI/2) , duration: 0)
+            sprite.runAction(rotate)
         }
         else if left == true {
             sprite.position.x -= 4
+            let rotate = SKAction.rotateToAngle(CGFloat(M_PI/2), duration: 0)
+            sprite.runAction(rotate)
         }
         else if up == true {
             sprite.position.y += 4
+            let rotate = SKAction.rotateToAngle(CGFloat(2*M_PI) , duration: 0)
+            sprite.runAction(rotate)
         }
         else if down == true {
             sprite.position.y -= 4
+            let rotate = SKAction.rotateToAngle(CGFloat(M_PI) , duration: 0)
+            sprite.runAction(rotate)
         }
         if sprite.position.x < -60 {
             sprite.position.x = self.size.width
@@ -268,7 +292,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
             sprite.position.y = 0
         }
         if sprite.position.y < 0 {
-            sprite.position.y = self.size.height
+            sprite.position.y = self.size.height - 100
         }
     }
     
