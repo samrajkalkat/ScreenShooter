@@ -35,11 +35,6 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide screenShooter" keyEquivalent="h" id="134">
-                                <connections>
-                                    <action selector="hide:" target="-1" id="367"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="Hide Others" keyEquivalent="h" id="145">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
@@ -65,12 +60,12 @@
                 <menuItem title="Window" id="19">
                     <menu key="submenu" title="Window" systemMenu="window" id="24">
                         <items>
-                            <menuItem title="Minimize" keyEquivalent="m" id="537">
+                            <menuItem title="Minimize" enabled="NO" keyEquivalent="m" id="537">
                                 <connections>
                                     <action selector="performMiniaturize:" target="-1" id="538"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Zoom" id="239">
+                            <menuItem title="Zoom" enabled="NO" id="239">
                                 <connections>
                                     <action selector="performZoom:" target="-1" id="240"/>
                                 </connections>
