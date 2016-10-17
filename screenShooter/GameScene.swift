@@ -40,7 +40,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         screenWidth = self.size.width
         screenHeight = self.size.height
         
-        sprite.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/15)
+        sprite.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/25)
         sprite.physicsBody?.dynamic = true
         sprite.physicsBody?.categoryBitMask = PhysicsCategory.Ship
         sprite.physicsBody?.contactTestBitMask = PhysicsCategory.Monster
@@ -155,7 +155,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         var randomPosition = CGPointMake(CGFloat(randRange(90, upper: width - 100)), CGFloat(randRange(150, upper: height - 100)))
         
         
-        while (abs(randomPosition.x - spriteX) < 25 || abs(randomPosition.y - spriteY) < 25) || (abs(randomPosition.x - self.size.width/2) < 25 ||   abs(randomPosition.y - self.size.height/2) < 25){
+        while (abs(randomPosition.x - spriteX) < 50 || abs(randomPosition.y - spriteY) < 50) || (abs(randomPosition.x - self.size.width/2) < 25 ||   abs(randomPosition.y - self.size.height/2) < 25){
             randomPosition = CGPointMake(CGFloat(randRange(90, upper: width - 100)), CGFloat(randRange(150, upper: height - 100)))
         }
         
@@ -164,7 +164,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         self.addChild(enemy)
         enemy.position = randomPosition
         
-        enemy.physicsBody = SKPhysicsBody(rectangleOfSize: enemy.size) // 1
+        enemy.physicsBody = SKPhysicsBody(circleOfRadius: enemy.size.width / 2) // 1
         enemy.physicsBody?.dynamic = true // 2
         enemy.physicsBody?.categoryBitMask = PhysicsCategory.Monster // 3
         enemy.physicsBody?.contactTestBitMask = PhysicsCategory.Projectile // 4
@@ -219,6 +219,14 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
 //        bad.removeFromParent()
 //        ship.removeFromParent()
         self.removeAllChildren()
+        
+        let rect = SKShapeNode(rectOfSize: CGSize(width: 100, height: 30))
+        rect.name = "Score"
+        rect.fillColor = SKColor.lightGrayColor()
+        rect.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 93 )
+        
+        self.addChild(rect)
+
         
         delay(0.4) {
             self.spawnAtRandomPosition()

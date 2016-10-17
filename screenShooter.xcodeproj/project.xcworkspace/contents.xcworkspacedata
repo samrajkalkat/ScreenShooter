@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:screenShooter.xcodeproj">
+      location = "self:/Users/samrajkalkat/Desktop/XCode/screenShooter/screenShooter.xcodeproj">
    </FileRef>
 </Workspace>
