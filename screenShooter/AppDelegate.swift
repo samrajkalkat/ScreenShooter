@@ -21,17 +21,41 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var skView: SKView!
     
     var speedModeSelected = false
+    var multiModeSelected = false
     
-    @IBAction func buttonPressed(sender: AnyObject) {
-        if speedModeSelected == false {
-            speedMode = true
-            speedModeSelected = true
+    @IBAction func normalModePressed(sender: AnyObject) {
+        speedMode = false
+        multiMode = false
+    }
+    @IBAction func multiModeSelected(sender: AnyObject) {
+        if multiModeSelected == false {
+            speedMode = false
+            multiMode = true
+            multiModeSelected = true
         }
         else {
+            multiMode = false
+            normalMode = true
             speedMode = false
         }
         
     }
+    
+    @IBAction func speedModePressed(sender: AnyObject) {
+        if speedModeSelected == false {
+            speedMode = true
+            speedModeSelected = true
+            normalMode = true
+            multiMode = false
+        }
+        else {
+            speedMode = false
+            normalMode = true
+            multiMode = false
+        }
+        
+    }
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         /* Pick a size for the scene */
         if let scene = GameScene(fileNamed:"GameScene") {

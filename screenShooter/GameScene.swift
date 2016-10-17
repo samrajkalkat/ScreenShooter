@@ -28,6 +28,12 @@ struct PhysicsCategory {
     static let Ship      : UInt32 = 0b100 // 2
 }
 
+extension Int : SequenceType {
+    public func generate() -> RangeGenerator<Int> {
+        return (0..<self).generate()
+    }
+}
+
 class GameScene: SKScene , SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         
@@ -43,7 +49,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         sprite.physicsBody?.affectedByGravity = false
         sprite.position.x = self.size.width/2
         sprite.position.y = self.size.height/2
-        speed = 3
+        speed = 3.3
         myLabel.fontSize = 20
         myLabel.fontColor = NSColor.whiteColor()
         myLabel.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 100)
@@ -149,7 +155,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         var randomPosition = CGPointMake(CGFloat(randRange(90, upper: width - 100)), CGFloat(randRange(150, upper: height - 100)))
         
         
-        while abs(randomPosition.x - spriteX) < 25 ||   abs(randomPosition.y - spriteY) < 25{
+        while (abs(randomPosition.x - spriteX) < 25 || abs(randomPosition.y - spriteY) < 25) || (abs(randomPosition.x - self.size.width/2) < 25 ||   abs(randomPosition.y - self.size.height/2) < 25){
             randomPosition = CGPointMake(CGFloat(randRange(90, upper: width - 100)), CGFloat(randRange(150, upper: height - 100)))
         }
         
@@ -169,19 +175,40 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         print(spriteY)
     }
     
+
+    
     func projectileDidCollideWithMonster(projectile:SKSpriteNode, bad:SKSpriteNode) {
         print("Hit")
         projectile.removeFromParent()
         bad.removeFromParent()
-        delay(0.2) {
-            self.spawnAtRandomPosition()
+        if multiMode == false {
+            delay(0.2) {
+                self.spawnAtRandomPosition()
+            }
         }
         
+        if multiMode == true && score < 10 {
+            delay(0.2) {
+                for _ in 2 {
+                    self.spawnAtRandomPosition()
+                }
+            }
+            
+        }
+        
+        if multiMode == true && score >= 10 {
+            delay(0.2) {
+                self.spawnAtRandomPosition()
+            }
+        }
+    
         score += 1
        
         if speedMode == true {
-            speed += CGFloat(score) * (1/20)
+            speed += CGFloat(score) * (1/39)
         }
+        
+        
 
  
         myLabel.text = "Score: \(score)"
@@ -189,8 +216,9 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     
     func shipDidCollideWithMonster(ship:SKSpriteNode, bad:SKSpriteNode) {
         print("Crash")
-        bad.removeFromParent()
-        ship.removeFromParent()
+//        bad.removeFromParent()
+//        ship.removeFromParent()
+        self.removeAllChildren()
         
         delay(0.4) {
             self.spawnAtRandomPosition()
@@ -227,7 +255,10 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         // 2
         if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
             (secondBody.categoryBitMask == 2 && PhysicsCategory.Projectile != 0)){
-            projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, bad: secondBody.node as! SKSpriteNode)
+            if secondBody.node != nil  && firstBody.node != nil {
+                projectileDidCollideWithMonster(firstBody.node as! SKSpriteNode, bad: secondBody.node as! SKSpriteNode)
+            }
+            
         }
         
          if ((firstBody.categoryBitMask & PhysicsCategory.Monster != 0) &&
@@ -336,7 +367,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         
         else if theEvent.keyCode == 49 {
             fireMissile(direction)
-            
         }
         
         
@@ -354,6 +384,10 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     
     override func update(currentTime: CFTimeInterval)
     {
+        
+        if speedMode == false || multiMode == false {
+            speed = 3
+        }
         
         
         updateScore(myLabel)

@@ -27,15 +27,21 @@
                             </menuItem>
                             <menuItem title="NormalMode" keyEquivalent="n" id="OYi-oI-DHO">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="normalModePressed:" target="494" id="osB-4x-gwr"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="SpeedMode" keyEquivalent="s" id="50b-PM-uea" userLabel="Speed Mode">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
-                                    <action selector="buttonPressed:" target="494" id="hRe-S6-7ui"/>
+                                    <action selector="speedModePressed:" target="494" id="Efw-EU-CS2"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="MultiMode" keyEquivalent="m" id="0IZ-Fq-bFR">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="multiModeSelected:" target="494" id="Cut-QJ-lCX"/>
+                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
