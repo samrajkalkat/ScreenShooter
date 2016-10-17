@@ -8,7 +8,7 @@
 
 import SpriteKit
 var direction = "right"
-let sprite = SKSpriteNode(imageNamed:"Ship")
+let sprite = SKSpriteNode(imageNamed:"ship")
 
 var height = 0
 var width = 0
@@ -62,7 +62,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
        
         self.view?.allowsTransparency = true
         self.backgroundColor = NSColor.clearColor()
-        sprite.size = CGSize(width: 60, height: 60)
+        sprite.size = CGSize(width: 60, height: 100)
         
         
         self.addChild(sprite)
@@ -154,7 +154,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         }
         
         let enemy = SKSpriteNode(imageNamed: "Enemy")
-        enemy.size = CGSize(width: 50, height: 50)
+        enemy.size = CGSize(width: 55, height: 100)
         self.addChild(enemy)
         enemy.position = randomPosition
         
