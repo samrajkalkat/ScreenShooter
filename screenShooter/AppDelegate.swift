@@ -10,12 +10,28 @@
 import Cocoa
 import SpriteKit
 
+var speedMode = false
+var multiMode = false
+var normalMode = true
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var skView: SKView!
     
+    var speedModeSelected = false
+    
+    @IBAction func buttonPressed(sender: AnyObject) {
+        if speedModeSelected == false {
+            speedMode = true
+            speedModeSelected = true
+        }
+        else {
+            speedMode = false
+        }
+        
+    }
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         /* Pick a size for the scene */
         if let scene = GameScene(fileNamed:"GameScene") {

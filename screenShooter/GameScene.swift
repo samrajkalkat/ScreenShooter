@@ -13,6 +13,9 @@ let sprite = SKSpriteNode(imageNamed:"Ship")
 var height = 0
 var width = 0
 
+var screenHeight: CGFloat = 0
+var screenWidth: CGFloat = 0
+
 
 var score: Int = 0
 let myLabel = SKLabelNode(fontNamed:"Helvetica")
@@ -28,6 +31,9 @@ struct PhysicsCategory {
 class GameScene: SKScene , SKPhysicsContactDelegate {
     override func didMoveToView(view: SKView) {
         
+        screenWidth = self.size.width
+        screenHeight = self.size.height
+        
         sprite.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/15)
         sprite.physicsBody?.dynamic = true
         sprite.physicsBody?.categoryBitMask = PhysicsCategory.Ship
@@ -37,15 +43,21 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         sprite.physicsBody?.affectedByGravity = false
         sprite.position.x = self.size.width/2
         sprite.position.y = self.size.height/2
-        speed = 4
+        speed = 3
         myLabel.fontSize = 20
-        myLabel.fontColor = NSColor.redColor()
+        myLabel.fontColor = NSColor.whiteColor()
         myLabel.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 100)
         self.addChild(myLabel)
         
         physicsWorld.gravity = CGVectorMake(0, 0)
         physicsWorld.contactDelegate = self
         
+        let rect = SKShapeNode(rectOfSize: CGSize(width: 100, height: 30))
+        rect.name = "Score"
+        rect.fillColor = SKColor.lightGrayColor()
+        rect.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 93 )
+        
+        self.addChild(rect)
         
        
         self.view?.allowsTransparency = true
@@ -164,7 +176,13 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         delay(0.2) {
             self.spawnAtRandomPosition()
         }
+        
         score += 1
+       
+        if speedMode == true {
+            speed += CGFloat(score) * (1/20)
+        }
+
  
         myLabel.text = "Score: \(score)"
     }
@@ -174,18 +192,19 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         bad.removeFromParent()
         ship.removeFromParent()
         
-        delay(0.1) {
+        delay(0.4) {
             self.spawnAtRandomPosition()
         }
-        sprite.position.x = self.size.width/2
-        sprite.position.y = self.size.height/2
+        sprite.position.x = screenWidth/2
+        sprite.position.y = screenHeight/2
         
         delay(0.4) {
             self.addChild(sprite)
-            let rotate = SKAction.rotateToAngle(CGFloat(3*M_PI/2) , duration: 0)
-            sprite.runAction(rotate)
+            self.right = true
+         
         }
         score = 0
+        speed = 3
         myLabel.text = "Score: \(score)"
         
     }
@@ -336,6 +355,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval)
     {
         
+        
         updateScore(myLabel)
         
         if manIsMoving
@@ -344,22 +364,22 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         }
         
         if right == true {
-            sprite.position.x += 3
+            sprite.position.x += speed
             let rotate = SKAction.rotateToAngle(CGFloat(3*M_PI/2) , duration: 0)
             sprite.runAction(rotate)
         }
         else if left == true {
-            sprite.position.x -= 3
+            sprite.position.x -= speed
             let rotate = SKAction.rotateToAngle(CGFloat(M_PI/2), duration: 0)
             sprite.runAction(rotate)
         }
         else if up == true {
-            sprite.position.y += 3
+            sprite.position.y += speed
             let rotate = SKAction.rotateToAngle(CGFloat(2*M_PI) , duration: 0)
             sprite.runAction(rotate)
         }
         else if down == true {
-            sprite.position.y -= 3
+            sprite.position.y -= speed
             let rotate = SKAction.rotateToAngle(CGFloat(M_PI) , duration: 0)
             sprite.runAction(rotate)
         }
