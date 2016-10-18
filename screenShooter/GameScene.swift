@@ -52,7 +52,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         speed = 3.3
         myLabel.fontSize = 20
         myLabel.fontColor = NSColor.whiteColor()
-        myLabel.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 100)
+        myLabel.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 127)
         self.addChild(myLabel)
         
         physicsWorld.gravity = CGVectorMake(0, 0)
@@ -61,7 +61,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         let rect = SKShapeNode(rectOfSize: CGSize(width: 100, height: 30))
         rect.name = "Score"
         rect.fillColor = SKColor.lightGrayColor()
-        rect.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 93 )
+        rect.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 120 )
         
         self.addChild(rect)
         
@@ -216,6 +216,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     
     func shipDidCollideWithMonster(ship:SKSpriteNode, bad:SKSpriteNode) {
         print("Crash")
+        
 //        bad.removeFromParent()
 //        ship.removeFromParent()
         self.removeAllChildren()
@@ -223,7 +224,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         let rect = SKShapeNode(rectOfSize: CGSize(width: 100, height: 30))
         rect.name = "Score"
         rect.fillColor = SKColor.lightGrayColor()
-        rect.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 93 )
+        rect.position = CGPoint(x:self.frame.width - 90, y:self.frame.height - 120 )
         
         self.addChild(rect)
 
