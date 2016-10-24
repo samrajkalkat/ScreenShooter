@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F94875161D7791B800C0716B"
-               BuildableName = "screenShooter.app"
-               BlueprintName = "screenShooter"
-               ReferencedContainer = "container:screenShooter.xcodeproj">
+               BuildableName = "Screen Blaster.app"
+               BlueprintName = "Screen Blaster"
+               ReferencedContainer = "container:Screen Blaster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F94875161D7791B800C0716B"
-            BuildableName = "screenShooter.app"
-            BlueprintName = "screenShooter"
-            ReferencedContainer = "container:screenShooter.xcodeproj">
+            BuildableName = "Screen Blaster.app"
+            BlueprintName = "Screen Blaster"
+            ReferencedContainer = "container:Screen Blaster.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F94875161D7791B800C0716B"
-            BuildableName = "screenShooter.app"
-            BlueprintName = "screenShooter"
-            ReferencedContainer = "container:screenShooter.xcodeproj">
+            BuildableName = "Screen Blaster.app"
+            BlueprintName = "Screen Blaster"
+            ReferencedContainer = "container:Screen Blaster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F94875161D7791B800C0716B"
-            BuildableName = "screenShooter.app"
-            BlueprintName = "screenShooter"
-            ReferencedContainer = "container:screenShooter.xcodeproj">
+            BuildableName = "Screen Blaster.app"
+            BlueprintName = "Screen Blaster"
+            ReferencedContainer = "container:Screen Blaster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

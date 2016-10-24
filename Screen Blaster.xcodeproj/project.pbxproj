@@ -15,13 +15,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F94875171D7791B800C0716B /* screenShooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = screenShooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F94875171D7791B800C0716B /* Screen Blaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Screen Blaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F948751A1D7791B800C0716B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F948751C1D7791B800C0716B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		F948751E1D7791B800C0716B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		F94875201D7791B800C0716B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = screenShooter/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		F94875231D7791B800C0716B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		F94875251D7791B800C0716B /* InscreenShootero.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InscreenShootero.plist; sourceTree = "<group>"; };
+		F94875251D7791B800C0716B /* InScreen Blastero.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InScreen Blastero.plist"; sourceTree = "<group>"; };
 		F965B1511DB5522F00139DC6 /* screenShooter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = screenShooter.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,7 +47,7 @@
 		F94875181D7791B800C0716B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F94875171D7791B800C0716B /* screenShooter.app */,
+				F94875171D7791B800C0716B /* Screen Blaster.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,7 +58,7 @@
 				F965B1511DB5522F00139DC6 /* screenShooter.entitlements */,
 				F948751A1D7791B800C0716B /* AppDelegate.swift */,
 				F948751C1D7791B800C0716B /* GameScene.swift */,
-				F94875251D7791B800C0716B /* InscreenShootero.plist */,
+				F94875251D7791B800C0716B /* InScreen Blastero.plist */,
 				F94875221D7791B800C0716B /* MainMenu.xib */,
 				F94875201D7791B800C0716B /* Assets.xcassets */,
 				F948751E1D7791B800C0716B /* GameScene.sks */,
@@ -69,9 +69,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F94875161D7791B800C0716B /* screenShooter */ = {
+		F94875161D7791B800C0716B /* Screen Blaster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F94875281D7791B800C0716B /* Build configuration list for PBXNativeTarget "screenShooter" */;
+			buildConfigurationList = F94875281D7791B800C0716B /* Build configuration list for PBXNativeTarget "Screen Blaster" */;
 			buildPhases = (
 				F94875131D7791B800C0716B /* Sources */,
 				F94875141D7791B800C0716B /* Frameworks */,
@@ -81,9 +81,9 @@
 			);
 			dependencies = (
 			);
-			name = screenShooter;
+			name = "Screen Blaster";
 			productName = screenShooter;
-			productReference = F94875171D7791B800C0716B /* screenShooter.app */;
+			productReference = F94875171D7791B800C0716B /* Screen Blaster.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F94875121D7791B700C0716B /* Build configuration list for PBXProject "screenShooter" */;
+			buildConfigurationList = F94875121D7791B700C0716B /* Build configuration list for PBXProject "Screen Blaster" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -120,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F94875161D7791B800C0716B /* screenShooter */,
+				F94875161D7791B800C0716B /* Screen Blaster */,
 			);
 		};
 /* End PBXProject section */
@@ -252,10 +252,10 @@
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = screenShooter/InscreenShootero.plist;
+				INFOPLIST_FILE = "screenShooter/InScreen Blastero.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kalkat.screenShooter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Screen Blaster";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -268,10 +268,10 @@
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = screenShooter/InscreenShootero.plist;
+				INFOPLIST_FILE = "screenShooter/InScreen Blastero.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kalkat.screenShooter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Screen Blaster";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -279,7 +279,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F94875121D7791B700C0716B /* Build configuration list for PBXProject "screenShooter" */ = {
+		F94875121D7791B700C0716B /* Build configuration list for PBXProject "Screen Blaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F94875261D7791B800C0716B /* Debug */,
@@ -288,7 +288,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F94875281D7791B800C0716B /* Build configuration list for PBXNativeTarget "screenShooter" */ = {
+		F94875281D7791B800C0716B /* Build configuration list for PBXNativeTarget "Screen Blaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F94875291D7791B800C0716B /* Debug */,
