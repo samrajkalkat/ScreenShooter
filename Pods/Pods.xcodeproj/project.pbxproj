@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2504985BF140FA15186C89205BC6BC2F /* Pods-Screen Blaster-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5CC3A17706F976D051F58502D396A1B /* Pods-Screen Blaster-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A295E2AE43B7761B080D00370DEA4050 /* Pods-Screen Blaster-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D43FA8FBE04C42298F8BDC66F4EB517B /* Pods-Screen Blaster-dummy.m */; };
+		BBEA7181AD242548C4D8B0BDD63EB4B5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B972D9BB23CE0F62C343F077DEE7371 /* Pods-Screen Blaster-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Screen Blaster-frameworks.sh"; sourceTree = "<group>"; };
+		0CD4AC2E97C85086B3F914D24F5575A6 /* Pods-Screen Blaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Screen Blaster.debug.xcconfig"; sourceTree = "<group>"; };
+		1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		7B34674B1B258A655C73E31AB793196F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D8C6412A21D0EC5FC74C8DE7498D48F /* Pods-Screen Blaster-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Screen Blaster-acknowledgements.plist"; sourceTree = "<group>"; };
+		8FCB22203A44C243D5A9493E6077D78B /* Pods-Screen Blaster-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Screen Blaster-resources.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D4371738AA7A9073FF0167D09CBC2411 /* Pods-Screen Blaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Screen Blaster.release.xcconfig"; sourceTree = "<group>"; };
+		D43FA8FBE04C42298F8BDC66F4EB517B /* Pods-Screen Blaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Screen Blaster-dummy.m"; sourceTree = "<group>"; };
+		E2932620E9B9ACED973827319CDE9533 /* Pods-Screen Blaster-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Screen Blaster-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E5CC3A17706F976D051F58502D396A1B /* Pods-Screen Blaster-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Screen Blaster-umbrella.h"; sourceTree = "<group>"; };
+		F0BABE62F40A9F72A770225FC83A1022 /* Pods_Screen_Blaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Screen_Blaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F3E0126237E9B91D1350444FFCBE1C /* Pods-Screen Blaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Screen Blaster.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78CEF75318FB65B31B7731980DCAC219 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBEA7181AD242548C4D8B0BDD63EB4B5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28C17CEF104526ACA07B6EEE217EC43E /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28C17CEF104526ACA07B6EEE217EC43E /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		487AED4DF8E1C6615FBA8C9E59A0BBCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0BABE62F40A9F72A770225FC83A1022 /* Pods_Screen_Blaster.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
+				DB3254038CD76C3E93BB22DD07500B7D /* Pods */,
+				487AED4DF8E1C6615FBA8C9E59A0BBCB /* Products */,
+				8B845EB36705469C0B2F5FBE4A822BCF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8B845EB36705469C0B2F5FBE4A822BCF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F93DA621BFFD95C1943AB4FD0BF7CFFB /* Pods-Screen Blaster */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		AC7D0F27E95673609CDCBFCFA2C65C79 /* Mixpanel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mixpanel;
+			sourceTree = "<group>";
+		};
+		DB3254038CD76C3E93BB22DD07500B7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC7D0F27E95673609CDCBFCFA2C65C79 /* Mixpanel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F93DA621BFFD95C1943AB4FD0BF7CFFB /* Pods-Screen Blaster */ = {
+			isa = PBXGroup;
+			children = (
+				7B34674B1B258A655C73E31AB793196F /* Info.plist */,
+				F6F3E0126237E9B91D1350444FFCBE1C /* Pods-Screen Blaster.modulemap */,
+				E2932620E9B9ACED973827319CDE9533 /* Pods-Screen Blaster-acknowledgements.markdown */,
+				7D8C6412A21D0EC5FC74C8DE7498D48F /* Pods-Screen Blaster-acknowledgements.plist */,
+				D43FA8FBE04C42298F8BDC66F4EB517B /* Pods-Screen Blaster-dummy.m */,
+				0B972D9BB23CE0F62C343F077DEE7371 /* Pods-Screen Blaster-frameworks.sh */,
+				8FCB22203A44C243D5A9493E6077D78B /* Pods-Screen Blaster-resources.sh */,
+				E5CC3A17706F976D051F58502D396A1B /* Pods-Screen Blaster-umbrella.h */,
+				0CD4AC2E97C85086B3F914D24F5575A6 /* Pods-Screen Blaster.debug.xcconfig */,
+				D4371738AA7A9073FF0167D09CBC2411 /* Pods-Screen Blaster.release.xcconfig */,
+			);
+			name = "Pods-Screen Blaster";
+			path = "Target Support Files/Pods-Screen Blaster";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E1DC58CEC6FEAD15DEA21767E283D1CC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2504985BF140FA15186C89205BC6BC2F /* Pods-Screen Blaster-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		F76B88F3AEF59227F7C7CD8179C41223 /* Pods-Screen Blaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7123B80259315C5D9A19D14DE4DCD4A0 /* Build configuration list for PBXNativeTarget "Pods-Screen Blaster" */;
+			buildPhases = (
+				B832F33EDC20C09F3C2F464821EE2E87 /* Sources */,
+				78CEF75318FB65B31B7731980DCAC219 /* Frameworks */,
+				E1DC58CEC6FEAD15DEA21767E283D1CC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Screen Blaster";
+			productName = "Pods-Screen Blaster";
+			productReference = F0BABE62F40A9F72A770225FC83A1022 /* Pods_Screen_Blaster.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 487AED4DF8E1C6615FBA8C9E59A0BBCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F76B88F3AEF59227F7C7CD8179C41223 /* Pods-Screen Blaster */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B832F33EDC20C09F3C2F464821EE2E87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A295E2AE43B7761B080D00370DEA4050 /* Pods-Screen Blaster-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5D622BA00757EC20ADAD24C580904C04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		892D7C90AADFF68D18CD10374C6DB439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CD4AC2E97C85086B3F914D24F5575A6 /* Pods-Screen Blaster.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Screen Blaster/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-Screen Blaster/Pods-Screen Blaster.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Screen_Blaster;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AB74B5E09B30AE94F1D9671501EA01E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C75EFDE28366D159189279847662295D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4371738AA7A9073FF0167D09CBC2411 /* Pods-Screen Blaster.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Screen Blaster/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-Screen Blaster/Pods-Screen Blaster.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Screen_Blaster;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB74B5E09B30AE94F1D9671501EA01E8 /* Debug */,
+				5D622BA00757EC20ADAD24C580904C04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7123B80259315C5D9A19D14DE4DCD4A0 /* Build configuration list for PBXNativeTarget "Pods-Screen Blaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				892D7C90AADFF68D18CD10374C6DB439 /* Debug */,
+				C75EFDE28366D159189279847662295D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

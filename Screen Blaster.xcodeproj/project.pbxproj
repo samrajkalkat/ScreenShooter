@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990C4DF9C6D4C35D5A75B14C /* Pods_Screen_Blaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366BE69C02EE7725024A02D8 /* Pods_Screen_Blaster.framework */; };
 		F948751B1D7791B800C0716B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948751A1D7791B800C0716B /* AppDelegate.swift */; };
 		F948751D1D7791B800C0716B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948751C1D7791B800C0716B /* GameScene.swift */; };
 		F948751F1D7791B800C0716B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F948751E1D7791B800C0716B /* GameScene.sks */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		366BE69C02EE7725024A02D8 /* Pods_Screen_Blaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Screen_Blaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F94875171D7791B800C0716B /* Screen Blaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Screen Blaster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F948751A1D7791B800C0716B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F948751C1D7791B800C0716B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -30,17 +32,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				990C4DF9C6D4C35D5A75B14C /* Pods_Screen_Blaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97EA706F5714837D3EB691D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				366BE69C02EE7725024A02D8 /* Pods_Screen_Blaster.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC342997EA6E7A8D46B3DFCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F948750E1D7791B700C0716B = {
 			isa = PBXGroup;
 			children = (
 				F94875191D7791B800C0716B /* screenShooter */,
 				F94875181D7791B800C0716B /* Products */,
+				AC342997EA6E7A8D46B3DFCA /* Pods */,
+				97EA706F5714837D3EB691D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,9 +93,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F94875281D7791B800C0716B /* Build configuration list for PBXNativeTarget "Screen Blaster" */;
 			buildPhases = (
+				4690FAD77DB61BB255DF5F67 /* [CP] Check Pods Manifest.lock */,
 				F94875131D7791B800C0716B /* Sources */,
 				F94875141D7791B800C0716B /* Frameworks */,
 				F94875151D7791B800C0716B /* Resources */,
+				62185478914C6F30622A19A7 /* [CP] Embed Pods Frameworks */,
+				6162158E55E37269631ADBCF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4690FAD77DB61BB255DF5F67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6162158E55E37269631ADBCF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Screen Blaster/Pods-Screen Blaster-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62185478914C6F30622A19A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Screen Blaster/Pods-Screen Blaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F94875131D7791B800C0716B /* Sources */ = {
